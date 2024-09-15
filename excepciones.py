@@ -27,7 +27,7 @@ while True:
     cod = input ("Ingrese codigo: ")
     try:
         print("El codigo de pais es:", paises[cod])
-    #dentificamos el tipo de error que puede haber
+    #identificamos el tipo de error que puede haber
     except KeyError:
         if cod == "salir":
             print("Gracias por utilzar el programa")
