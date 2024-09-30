@@ -29,7 +29,7 @@ import time
 #creamos una funcion llamada guardar 
 def guardar(fech,nom,eve):
     
-    f = open("registro.txt","w")
+    f = open("registro.txt","a")
     f.write(f"{fech}--{nom}--{eve}\n")
     f.close()
     print("evento salvado")
