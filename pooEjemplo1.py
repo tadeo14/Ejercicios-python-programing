@@ -2,31 +2,33 @@
 
 
 class Fabrica():
-    #creamos el metodo init
-    def __init__(self):
+    
+    def __init__(self,c,t,m):
+        #correr al inicio cuando se crea la instancia
         #definimos atributos
-        self.color = "amarillo"
-        self.tipo = "futbol"
-        self.material = "cuero"
+        self.color = c
+        self.tipo = t
+        self.material = m
     
     #definimos un metodo
     def picar(self):
-        print("El balon esta picado")
-
+        if self.tipo.lower() == "futbol" :
+            print("El balon esta picado")
+        elif self.tipo.lower() == "playa" :
+            for n in range (3):
+                print("El balon esta picado")
+        else: 
+            print("pum")
 #La palabra self se usa para guardar el espacio del nombre del objeto que corresponde
 
 #########################################
 
-obj1 = Fabrica()
-
-#instancia 
-obj2= Fabrica()
-
+obj1 = Fabrica("Turquesa","playa","Plastico") #Pasamos los atributos como parametros
 
 print(obj1.color)
+print(obj1.tipo)
+print(obj1.material)
 
-obj2.color = "Naranja"
-print(obj2.color)
+obj1.tipo = "futbol"
 
-#aplicamos el metodo
 obj1.picar()
