@@ -3,7 +3,7 @@
 
 class Fabrica():
     
-    def __init__(self,c,t,m):
+    def __init__(self,c="amarillo",t="futbol",m="cuero"):
         #correr al inicio cuando se crea la instancia
         #definimos atributos
         self.color = c
