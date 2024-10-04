@@ -1,4 +1,6 @@
 import sqlite3
+from tabulate import tabulate
+
 
 conn = sqlite3.connect("datos.sqlite3")
 
@@ -12,12 +14,23 @@ try:
 except sqlite3.OperationalError:
     print("Bienvenido nuevamente")
 
-cursor.execute("INSERT INTO personas VALUES (?,?)",("Roberto", 50))
+
+# t = (("Osvaldo",30),("Juan", 40), ("hector",62))
+
+# for nombre,edad in t:
+#     cursor.execute("INSERT INTO personas VALUES (?,?)",(nombre, edad))
 
 
+#seleccionamos toda la tabla
+cursor.execute("SELECT * FROM personas")
 
-
-
+#guardamos los datos en una variable
+data = cursor.fetchall()
 
 conn.commit()
 conn.close()
+
+#sera una lista de tuplas
+
+
+print(tabulate(data,["Nombre", "Edad"],tablefmt="pretty"))
