@@ -28,3 +28,5 @@ conn.commit()
 conn.close()
 
 print(data)
+
+print(tabulate(data,["Nombre","Edad"], tablefmt="pretty"))
